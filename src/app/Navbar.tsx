@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { SignIn } from "./component/signin";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,9 +36,8 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className={`sticky top-0 z-50 flex items-center justify-between py-3 px-4 md:px-24 lg:px-56 border-b-2 border-main transition-all duration-300 ${
-        isScrolled ? "bg-white bg-opacity-75" : "bg-white"
-      }`}
+      className={`sticky top-0 z-50 flex items-center justify-between py-3 px-4 md:px-24 lg:px-56 border-b-2 border-main transition-all duration-300 ${isScrolled ? "bg-white bg-opacity-75" : "bg-white"
+        }`}
     >
       <Link href={"/"}>
         <div className="flex items-center">
@@ -60,6 +60,7 @@ const Navbar = () => {
         <button className="rounded-lg bg-main px-4 py-2 text-white transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
           Post A Billingual Job
         </button>
+        <SignIn />
       </div>
       <div className="md:hidden flex items-center">
         <button
@@ -80,11 +81,9 @@ const Navbar = () => {
         </button>
       </div>
       <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } md:hidden mobile-menu bg-white shadow-lg rounded-b-lg absolute top-16 left-0 right-0 px-4 py-4 ${
-          isScrolled ? "bg-white bg-opacity-75" : "bg-white"
-        } text-center`}
+        className={`${isOpen ? "block" : "hidden"
+          } md:hidden mobile-menu bg-white shadow-lg rounded-b-lg absolute top-16 left-0 right-0 px-4 py-4 ${isScrolled ? "bg-white bg-opacity-75" : "bg-white"
+          } text-center`}
       >
         <a href="/" className="block text-main py-2 animated-underline">
           Find Jobs For Developer

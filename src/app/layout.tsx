@@ -28,6 +28,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+        <meta name="google-signin-client_id" content={process.env.AUTH_GOOGLE_ID} />
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
       </Head>
       <body>
         <Navbar />
