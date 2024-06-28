@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Lobster } from "next/font/google";
+import { SignIn } from "./signin";
 
 
 const lobster = Lobster({
@@ -72,6 +73,7 @@ const Navbar = () => {
         >
           Post A Developer Job
         </button>
+        <SignIn />
       </div>
       <div className="md:hidden flex items-center">
         <button
@@ -92,11 +94,9 @@ const Navbar = () => {
         </button>
       </div>
       <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } md:hidden mobile-menu bg-white shadow-lg rounded-b-lg absolute top-16 left-0 right-0 px-4 py-4 ${
-          isScrolled ? "bg-white bg-opacity-75" : "bg-white"
-        } text-center`}
+        className={`${isOpen ? "block" : "hidden"
+          } md:hidden mobile-menu bg-white shadow-lg rounded-b-lg absolute top-16 left-0 right-0 px-4 py-4 ${isScrolled ? "bg-white bg-opacity-75" : "bg-white"
+          } text-center`}
       >
         <div>
           <Link
