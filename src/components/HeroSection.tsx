@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Montserrat } from "@next/font/google";
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   weight: "800",

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Head from "next/head";
-import { Roboto } from "@next/font/google";
+import { Roboto } from "next/font/google";
 import Footer from "@/components/Footer";
 
 // const montserrat = Inter({

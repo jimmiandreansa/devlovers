@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Lobster } from "@next/font/google";
+import { Lobster } from "next/font/google";
 
 
 const lobster = Lobster({
