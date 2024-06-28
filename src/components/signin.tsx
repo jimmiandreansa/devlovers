@@ -1,6 +1,6 @@
 "use client";
 
-import { handleSignIn } from "../api/auth/authActions";
+import { handleSignIn } from "../app/api/auth/authActions";
 
 export function SignIn() {
   return (

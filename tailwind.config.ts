@@ -18,6 +18,8 @@ const config: Config = {
       },
       colors: {
         main: "#D33282",
+        secondary: "#03b6fc",
+        third: "#2d373b",
         border: "#5a6363",
       },
     },
