@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface Job {
@@ -32,7 +33,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, isOpen, onToggle }) => {
   return (
     <div
       onClick={onToggle}
-      className="border-b py-4 bg-white rounded-lg py-2 px-6 border hover:border-main mb-2 cursor-pointer"
+      className="border-b py-4 bg-white rounded-lg px-6 border hover:border-main mb-2 cursor-pointer"
     >
       <div className="flex justify-between items-center">
         <div className="flex items-center">
@@ -67,11 +68,8 @@ const JobCard: React.FC<JobCardProps> = ({ job, isOpen, onToggle }) => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="items-end">
           <p>{job.timePosted}</p>
-          <button className="mt-2 px-4 py-2 bg-gray-300 rounded hover:bg-main hover:text-white">
-            Apply
-          </button>
         </div>
       </div>
       {isOpen && (

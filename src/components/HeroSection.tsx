@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Montserrat } from "next/font/google";
+import Image from "next/image";
 
 const montserrat = Montserrat({
   weight: "800",
@@ -37,7 +38,7 @@ const HeroSection = () => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
-      <h4 className="text-secondary font-bold text-xl">
+      <h4 className="text-second font-bold text-xl">
         From The Makers Of Developer World Map 🌍
       </h4>
       <h1
@@ -107,7 +108,7 @@ const HeroSection = () => {
           </h3>
           <div className="flex justify-center space-x-8" id="jobs">
             {company.map((image, index) => (
-              <img
+              <Image
                 key={index}
                 src={image}
                 alt="Developer Jobs"
