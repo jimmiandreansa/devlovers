@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { Lobster } from "@next/font/google";
+import { Lobster } from "next/font/google";
+import Image from "next/image";
 
 const lobster = Lobster({
   weight: "400",
@@ -18,7 +19,7 @@ const Footer = () => {
             <div className="text-center md:text-left">
               <Link href={"/"}>
                 <div className="flex items-center">
-                  <img
+                  <Image
                     src="https://gcdnb.pbrd.co/images/2vuSqDR2F05t.png?o=1"
                     alt="Devlovers Logo"
                     className="w-6 h-6 md:w-10 md:h-10"

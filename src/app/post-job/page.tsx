@@ -1,6 +1,10 @@
-import React from 'react'
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import Link from "next/link";
+import React from "react";
 
-const PostJobPage = () => {
+const PostJobPage = async () => {
+  const session = await getServerSession(authOptions);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100 mb-8">
       <div className="w-full max-w-2xl bg-white p-8 rounded-lg shadow-lg mt-8">
@@ -8,8 +12,8 @@ const PostJobPage = () => {
           How To Post A Job?
         </h2>
         <p className="text-center mb-6">
-          Thanks for considering to post a job at Devlovers. The worlds
-          first developer job board.
+          Thanks for considering to post a job at Devlovers. The worlds first
+          developer job board.
           <br />
           Here are the 3 steps to create it:
         </p>
@@ -70,7 +74,8 @@ const PostJobPage = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="languages"
             >
-              Whats all the languages programming / framework your ideal applicant should have?*
+              Whats all the languages programming / framework your ideal
+              applicant should have?*
             </label>
             <input
               type="text"
@@ -156,8 +161,8 @@ const PostJobPage = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="salaryRange"
             >
-              Whats the annual salary range in IDR (gross, annualized,
-              full-time equivalent)?*
+              Whats the annual salary range in IDR (gross, annualized, full-time
+              equivalent)?*
             </label>
             <div className="flex space-x-2">
               <select
@@ -196,12 +201,21 @@ const PostJobPage = () => {
             />
           </div>
           <div className="flex justify-center">
-            <button
-              type="submit"
-              className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-6 py-2 rounded-lg font-bold"
-            >
-              Get Started For Rp 150.000
-            </button>
+            {session ? (
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-6 py-2 rounded-lg font-bold"
+              >
+                Get Started For Rp 150.000
+              </button>
+            ) : (
+              <Link
+                href={"/sign-in"}
+                className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-6 py-2 rounded-lg font-bold"
+              >
+                Please sign in to post a job
+              </Link>
+            )}
           </div>
         </form>
         <div className="flex justify-center mt-6">
@@ -210,6 +224,6 @@ const PostJobPage = () => {
       </div>
     </div>
   );
-}
+};
 
-export default PostJobPage
+export default PostJobPage;

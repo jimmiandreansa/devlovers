@@ -9,7 +9,7 @@ const jobs = [
     company: "Your Company Name",
     logo: "https://img.freepik.com/free-psd/gradient-abstract-logo_23-2150689644.jpg?w=900&t=st=1719393573~exp=1719394173~hmac=9725f2433a633f6756bab6b793cf2ab9a9fc2c2e1a09bbeecfbcd253072ba7cd", // Add logo URL if available
     position: "Here is your job",
-    technologies: ["English", "Spanish"],
+    technologies: ["Vue JS", "Nest JS"],
     minSalary: 3000000,
     maxSalary: 4000000,
     location: "North America",

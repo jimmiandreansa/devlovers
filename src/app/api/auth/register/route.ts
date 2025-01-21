@@ -1,23 +1,22 @@
 import { PrismaClient } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import * as z from 'zod'
+import * as z from "zod";
 
 const prisma = new PrismaClient();
 
-const userSchema = z
-  .object({
-    username: z
-      .string()
-      .min(1, "Username is required")
-      .min(4, "Username must have than 4 characters")
-      .max(20, "Username must have less than 20 characters"),
-    email: z.string().min(1, "Email is required").email("Invalid email"),
-    password: z
-      .string()
-      .min(1, "Password is required")
-      .min(8, "Password must have than 8 characters"),
-  })
+const userSchema = z.object({
+  username: z
+    .string()
+    .min(1, "Username is required")
+    .min(4, "Username must have than 4 characters")
+    .max(20, "Username must have less than 20 characters"),
+  email: z.string().min(1, "Email is required").email("Invalid email"),
+  password: z
+    .string()
+    .min(1, "Password is required")
+    .min(8, "Password must have than 8 characters"),
+});
 
 export async function GET() {
   try {
@@ -34,7 +33,7 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const body = await request.json()
+  const body = await request.json();
   const { username, password, email } = userSchema.parse(body);
   try {
     const isEmailExist = await prisma.user.findFirst({
